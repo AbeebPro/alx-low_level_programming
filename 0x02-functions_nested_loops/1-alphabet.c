@@ -1,15 +1,5 @@
 #include "main.h"
 /**
- * main - Entry point
- *
- * Return: Alwaus 0 (Success)
- */
-int main(void)
-{
-	print_alphabet();
-	return (0);
-}
-/**
  * print_alphabet - prints lowercase
  *
  * Return: Nothing
