@@ -8,4 +8,5 @@ int _isalpha(int c);
 int print_sign(int c);
 int _abs(int);
 void jack_bauer(void);
+int add(int, int);
 #endif
