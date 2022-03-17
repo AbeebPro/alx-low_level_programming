@@ -13,9 +13,10 @@ int _isdigit(int c)
 	for (i = '0'; i <= '9'; i++)
 	{
 		if (i == c)
+		{
 			num = 1;
-		else
-			num = 0;
+			break;
+		}
 	}
 	return (num);
 }
