@@ -7,15 +7,16 @@
  */
 int _isupper(int c)
 {
-	int ch;
+	char ch;
 	int upper = 0;
 
 	for (ch = 'A'; ch <= 'Z'; ch++)
 	{
-		if (c == ch)
+		if (ch == c)
+		{
 			upper = 1;
-		else
-			upper = 0;
+			break;
+		}
 	}
 	return (upper);
 }
