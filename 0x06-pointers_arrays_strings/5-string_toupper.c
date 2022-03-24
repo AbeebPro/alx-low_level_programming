@@ -14,7 +14,7 @@ char *string_toupper(char *str)
 		len++;
 		i++;
 	}
-	for (j = 0; j < (len - 2); j++)
+	for (j = 0; j < (len - 1); j++)
 	{
 		if (str[j] == ' ')
 			str[j] = 32;
