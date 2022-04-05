@@ -19,7 +19,7 @@ char *str_concat(char *s1, char *s2)
 	}
 	if (s2 == NULL)
 		s2 = "";
-	while(*(s2 + len2))
+	while (*(s2 + len2))
 	{
 		len2++;
 	}
