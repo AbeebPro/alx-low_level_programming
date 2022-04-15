@@ -1,0 +1,44 @@
+#include <stdio.h>
+#include <stdarg.h>
+/**
+* print_all - print char, integer, float and string
+* @format: format
+*/
+void print_all(const char * const format, ...)
+{
+	int i = 0;
+	va_list args;
+	char *s;
+
+	va_start(args, format);
+	while (format[i])
+	{
+		switch (format[i])
+		{
+			case 'c':
+				printf("%c", (char)va_arg(args, int));
+				break;
+			case 'i':
+				printf("%d", va_arg(args, int));
+				break;
+			case 'f':
+				printf("%f", (float)va_arg(args, double));
+				break;
+			case 's':
+				s = va_arg(args, char*);
+
+				if (s != NULL)
+				{
+					printf("%s", s);
+					break;
+				}
+				printf("(nil)");
+				break;
+		}
+		if ((format[i] == 'c' || format[i] == 'i' || format[i] == 'f' || format[i] == 's') && format[(i + 1)] != '\0')
+			printf(", ");
+		i++;
+	}
+	printf("\n");
+	va_end(args);
+}
