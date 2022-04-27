@@ -1,5 +1,4 @@
 #include "lists.h"
-#include <stdlib.h>
 /**
  * insert_nodeint_at_index - A function that inserts node at given index
  * @head: A pointer to listint_t structure
@@ -18,19 +17,19 @@ listint_t *insert_nodeint_at_index(listint_t **head, unsigned int idx, int n)
 	new_node = malloc(sizeof(listint_t));
 	if (new_node == NULL)
 		return (NULL);
-	new_node->next = NULL;
-	new_node->n = n;
 
 	if (*head == NULL)
 	{
+		new_node->next = NULL;
+		new_node->n = n;
 		*head = new_node;
 		return (new_node);
 	}
 
 	if (idx == 0)
 	{
-		temp = (*head);
-		new_node->next = temp;
+		new_node->next = *head;
+		new_node->n = n;
 		*head = new_node;
 		return (new_node);
 	}
@@ -40,6 +39,7 @@ listint_t *insert_nodeint_at_index(listint_t **head, unsigned int idx, int n)
 		temp = temp->next;
 		i++;
 	}
+	new_node->n = n;
 	new_node->next = temp->next;
 	temp->next = new_node;
 	return (new_node);
